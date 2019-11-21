@@ -3,6 +3,8 @@
     <label class="sr-only">Todo</label>
     <input [(ngModel)]="todo" class="form-control" name="todo"
       placement="bottom">
+      <!-- <input [ngModel]="todo" (ngModelChange)="todo = $event" class="form-control" name="todo"
+      placement="bottom"> -->
   </div>
   <button type="submit" class="btn btn-primary">+</button>
 </form>

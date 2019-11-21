@@ -11,7 +11,8 @@ export class AppComponent implements DoCheck {
   public todos = ['Item 1', 'Item 2', 'Item 3'];
 
   public handleNewTodo(todo) {
-    this.todos = [todo, ...this.todos];
+    this.todos.unshift(todo);
+    // this.todos = [todo, ...this.todos];
   }
 
   ngDoCheck(): void {
