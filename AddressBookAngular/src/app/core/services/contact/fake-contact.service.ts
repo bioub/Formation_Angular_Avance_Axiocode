@@ -1,8 +1,8 @@
-import { EventEmitter, Injectable } from '@angular/core';
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
-import { Observable } from 'rxjs/Observable';
+import {of as observableOf,  Observable } from 'rxjs';
+
+import {delay} from 'rxjs/operators';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { Contact } from '../../../shared/models/contact';
 import { ContactServiceInterface } from './contact-service-interface';
@@ -24,8 +24,8 @@ export class FakeContactService implements ContactServiceInterface {
   constructor() { }
 
   public getList$(): Observable<Contact[]> {
-    return Observable.of(this.contacts)
-              .delay(500);
+    return observableOf(this.contacts).pipe(
+              delay(500));
   }
 
   create$(contact: Contact): Observable<Contact> {
@@ -33,18 +33,18 @@ export class FakeContactService implements ContactServiceInterface {
     contact.id = nextId;
     this.contacts.push(contact);
 
-    return Observable.of(contact);
+    return observableOf(contact);
   }
 
   public getById$(id: number): Observable<Contact> {
     const contact = this.contacts.find(c => c.id === id);
 
     if (id === 1) {
-      return Observable.of(contact)
-        .delay(3000);
+      return observableOf(contact).pipe(
+        delay(3000));
     } else {
-      return Observable.of(contact)
-        .delay(500);
+      return observableOf(contact).pipe(
+        delay(500));
     }
   }
 }

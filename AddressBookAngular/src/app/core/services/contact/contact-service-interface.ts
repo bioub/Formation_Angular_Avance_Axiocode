@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Contact } from '../../../shared/models/contact';
 
 export interface ContactServiceInterface {

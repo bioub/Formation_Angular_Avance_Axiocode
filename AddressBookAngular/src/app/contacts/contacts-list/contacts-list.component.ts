@@ -1,8 +1,10 @@
+
+import {filter} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import 'rxjs/add/operator/filter';
+
 import { ContactService } from '../../core/services/contact/contact.service';
 import { Contact } from '../../shared/models/contact';
 
@@ -28,8 +30,8 @@ export class ContactsListComponent implements OnInit {
     });
 
     this.refreshList();
-    this.contactService.events
-      .filter(e => e === 'contact.write')
+    this.contactService.events.pipe(
+      filter(e => e === 'contact.write'))
       .subscribe(e => this.refreshList());
   }
 
