@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TransferHttpCacheModule } from "@nguniversal/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactsModule } from './contacts/contacts.module';
+// import { ContactsModule } from './contacts/contacts.module';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -11,9 +12,10 @@ import { CoreModule } from './core/core.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
-    ContactsModule,
+    // ContactsModule,
+    TransferHttpCacheModule,
     AppRoutingModule, // toujours en dernier
   ],
   providers: [],

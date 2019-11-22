@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiServer: 'http://monclient.com/api',
+  apiServer: 'http://localhost:3000',
 };
