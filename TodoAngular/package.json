@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "8.2.14",
     "@angular/router": "8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
+    "axio-components-lib": "file:../axio-components/dist/axio-components-lib",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.10",
     "rxjs": "^6.5.3",

@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "axio-components-lib": [
+        "dist/axio-components-lib"
+      ],
+      "axio-components-lib/*": [
+        "dist/axio-components-lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

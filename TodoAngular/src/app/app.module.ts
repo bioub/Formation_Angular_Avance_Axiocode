@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
+import { AxioModule } from "axio-components-lib";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ItemComponent } from './item/item.component';
     BrowserModule,
     FormsModule,
     NgbModule,
+    AxioModule,
   ],
   providers: [
     NgbTooltipConfig
