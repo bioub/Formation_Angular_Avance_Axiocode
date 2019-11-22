@@ -7,8 +7,15 @@ describe('todo-angular App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  // it('should display welcome message', () => {
+  //   page.navigateTo();
+  //   expect(page.getParagraphText()).toEqual('Welcome to todo!');
+  // });
+
+  it('should add a new todo', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to todo!');
+    page.fillInputTodo('ABC');
+    page.submitForm();
+    expect(page.getTodoItems().count()).toBe(4);
   });
 });
